@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Find Min and Max number</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		#row{
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+	<br>
+	<h3>Find Min and Max Number</h3><br><br>
+
+	<!-- Input section for Min and Max numbers -->
+	<div>Enter Comma Seperated Array</div>
+	<input type="text" id="txtarr" placeholder="1,2,5,10">
+	<input type="button" name="btnminmax" value="Calculate MinMax" onclick="Minmax()">
+	<br><br><br><br>
+
+
+	<!-- Section for showing the min and max numbers -->
+	<div class="row">
+		<label class="divlabel">Min Number is : </label>
+		<label class="label" id="minlabel"></label>
+	</div>
+	<br>
+	<div class="row">
+		<label class="divlabel">Max Number is : </label>
+		<label class="label" id="maxlabel"></label>
+	</div>
+
+
+	<!-- Java Script to find Min and Max numbers -->
+	<script type="text/javascript">
+		function Minmax(){
+
+			var minNum;
+			var maxNum;
+			var Num;
+
+			var arrVal = document.getElementById('txtarr').value;
+
+
+
+			if (arrVal == ""){
+				document.getElementById('minlabel').innerHTML = "";
+				document.getElementById('maxlabel').innerHTML = "";
+			} else {
+
+			var arrNum = arrVal.split(",");
+
+			for(i=0; i<= arrNum.length; i++){
+				Num = parseInt(arrNum[i]);
+
+				if (i ==0) {
+					minNum = parseInt(arrNum[i]);
+					maxNum = parseInt(arrNum[i]); }
+
+				if (Num < minNum) {
+					minNum = Num;
+				}else if (Num > maxNum){
+					maxNum = Num;}}
+				document.getElementById('minlabel').innerHTML = minNum;
+				document.getElementById('maxlabel').innerHTML = maxNum;
+			}
+		}
+
+	</script>
+</body>
+</html>
